@@ -1,6 +1,8 @@
 # React Material UI Components!
 
-React Material UI Components began life as React Slingshot is a comprehensive starter kit for rapid application development using React. I have modified this repository to include Material-UI and components I have written to showcase its use.
+React Material UI Components began life as React Slingshot. Over time, this project will diverge greatly from its origin, but will always appreciate the original project. The intent of this project is to showcase Material-UI components and how to use them.
+ 
+React Slingshot is a comprehensive starter kit for rapid application development using React.
 
 Why React Slingshot?
 
@@ -14,13 +16,13 @@ Why React Slingshot?
 [![React Slingshot Production Build](https://img.youtube.com/vi/qlfDLsX-J0U/0.jpg)](https://www.youtube.com/watch?v=qlfDLsX-J0U)
 
 ## Get Started
-1. **Initial Machine Setup**. First time running the starter kit? Then complete the [Initial Machine Setup](https://github.com/coryhouse/react-slingshot#initial-machine-setup).
-2. **Clone the project**. `git clone https://github.com/rafuff/react-material-ui-components.git`.
+1. **Initial Machine Setup**. First time running the starter kit? Then complete the [Initial Machine Setup](https://github.com/rafurr/react-slingshot#initial-machine-setup).
+2. **Clone the project**. `git clone https://github.com/rafurr/react-material-ui-components.git`.
 3. **Run the setup script**. `npm run setup`
 4. **Run the example app**. `npm start -s`
 This will run the automated build process, start up a webserver, and open the application in your default browser. When doing development with this kit, this command will continue watching all your files. Every time you hit save the code is rebuilt, linting runs, and tests run automatically. Note: The -s flag is optional. It enables silent mode which suppresses unnecessary messages during the build.
 5. **Review the example app.** This starter kit includes a working example app that calculates fuel savings. Note how all source code is placed under /src. Tests are placed alongside the file under test. The final built app is placed under /dist. These are the files you run in production.
-6. **Delete the example app files.** Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](https://github.com/coryhouse/react-slingshot/blob/master/docs/FAQ.md#i-just-want-an-empty-starter-kit).
+6. **Delete the example app files.** Once you're comfortable with how the example app works, you can [delete those files and begin creating your own app](https://github.com/rafurr/react-slingshot/blob/master/docs/FAQ.md#i-just-want-an-empty-starter-kit).
 
 ##Initial Machine Setup
 1. **Install [Node 4.0.0 or greater](https://nodejs.org)** - (5.0 or greater is recommended for optimal build performance). Need to run multiple versions of Node? Use [nvm](https://github.com/creationix/nvm).
@@ -29,7 +31,7 @@ This will run the automated build process, start up a webserver, and open the ap
  
 **On Linux:**  
 
- * Run this to [increase the limit](http://stackoverflow.com/questions/16748737/grunt-watch-error-waiting-fatal-error-watch-enospc) on the number of files Linux will watch. [Here's why](https://github.com/coryhouse/react-slingshot/issues/6).    
+ * Run this to [increase the limit](http://stackoverflow.com/questions/16748737/grunt-watch-error-waiting-fatal-error-watch-enospc) on the number of files Linux will watch.    
 `echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p` 
 
 **On Windows:** 
