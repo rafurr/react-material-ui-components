@@ -3,6 +3,7 @@
 React Material UI Components began life as React Slingshot. Over time, this project will diverge greatly from its origin, but will always appreciate the original project. The intent of this project is to showcase Material-UI components and how to use them.
 
 The component below is the NumberInput. It can be used to input numbers between min and max values. It can be used on a touch device via the left and right to decrement and increment, respectively, the values. The keyboard numbers and up and down arrows can also be used.
+
 <img width="315" alt="screen shot 2016-08-31 at 6 30 27 pm" src="https://cloud.githubusercontent.com/assets/5733481/18148680/2cbf99e2-6fa9-11e6-8453-0b55db110cb5.png">
  
 React Slingshot is a comprehensive starter kit for rapid application development using React.
