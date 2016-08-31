@@ -28,10 +28,15 @@ export class NumberInputPage extends React.Component {
     this.props.actions.setValue(v);
   }
 
+  handleResetClicked(e) {
+    this.props.actions.setValue(0);
+  }
+
   render() {
     return (
       <NumberInputForm
         onNumberChange={this.handleNumberChange.bind(this)}
+        onResetClicked={this.handleResetClicked.bind(this)}
         value={this.props.value}
       />
     );

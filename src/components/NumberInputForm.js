@@ -1,5 +1,7 @@
 import React, {PropTypes} from 'react';
 
+import RaisedButton from 'material-ui/RaisedButton';
+
 import {NumberInput} from './NumberInput';
 
 class NumberInputForm extends React.Component {
@@ -11,7 +13,8 @@ class NumberInputForm extends React.Component {
   render() {
     const {
       value,
-      onNumberChange
+      onNumberChange,
+      onResetClicked
     } = this.props;
 
     return (
@@ -38,6 +41,7 @@ class NumberInputForm extends React.Component {
           readOnly={false}
           onChange={onNumberChange}
           disabled={false} />
+        <RaisedButton label="Reset" primary={true} onClick={onResetClicked} />
       </div>
     );
   }
@@ -45,7 +49,8 @@ class NumberInputForm extends React.Component {
 
 NumberInputForm.propTypes = {
   value: PropTypes.number,
-  onNumberChange: PropTypes.func
+  onNumberChange: PropTypes.func,
+  onResetClicked: PropTypes.func
 };
 
 export default NumberInputForm;
