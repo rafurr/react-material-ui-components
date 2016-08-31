@@ -1,6 +1,8 @@
 # React Material UI Components!
 
 React Material UI Components began life as React Slingshot. Over time, this project will diverge greatly from its origin, but will always appreciate the original project. The intent of this project is to showcase Material-UI components and how to use them.
+
+<img width="315" alt="screen shot 2016-08-31 at 6 30 27 pm" src="https://cloud.githubusercontent.com/assets/5733481/18148680/2cbf99e2-6fa9-11e6-8453-0b55db110cb5.png">
  
 React Slingshot is a comprehensive starter kit for rapid application development using React.
 
