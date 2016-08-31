@@ -6,8 +6,8 @@ import {NumberInput} from './NumberInput';
 
 class NumberInputForm extends React.Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor() {
+    super();
   }
 
   render() {
@@ -48,7 +48,10 @@ class NumberInputForm extends React.Component {
 }
 
 NumberInputForm.propTypes = {
-  value: PropTypes.number,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ]),
   onNumberChange: PropTypes.func,
   onResetClicked: PropTypes.func
 };

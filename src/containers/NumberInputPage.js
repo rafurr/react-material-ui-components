@@ -24,19 +24,26 @@ function mapDispatchToProps(dispatch) {
 
 export class NumberInputPage extends React.Component {
 
+  constructor() {
+    super();
+
+    this.handleNumberChange = this.handleNumberChange.bind(this);
+    this.handleResetClicked = this.handleResetClicked.bind(this);
+  }
+
   handleNumberChange(e, v) {
     this.props.actions.setValue(v);
   }
 
-  handleResetClicked(e) {
-    this.props.actions.setValue(0);
+  handleResetClicked() {
+    this.props.actions.setValue('');
   }
 
   render() {
     return (
       <NumberInputForm
-        onNumberChange={this.handleNumberChange.bind(this)}
-        onResetClicked={this.handleResetClicked.bind(this)}
+        onNumberChange={this.handleNumberChange}
+        onResetClicked={this.handleResetClicked}
         value={this.props.value}
       />
     );
@@ -47,7 +54,10 @@ NumberInputPage.propTypes = {
   actions: PropTypes.shape({
     setValue: PropTypes.func
   }),
-  value: PropTypes.number
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.number
+  ])
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NumberInputPage);

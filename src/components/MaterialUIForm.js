@@ -4,8 +4,8 @@ import RaisedButton from 'material-ui/RaisedButton';
 
 class MaterialUIForm extends React.Component {
 
-  constructor(props, context) {
-    super(props, context);
+  constructor() {
+    super();
   }
 
   render() {

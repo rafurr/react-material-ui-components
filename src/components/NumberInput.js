@@ -9,6 +9,15 @@ export class NumberInput extends React.Component {
 
   constructor() {
     super();
+
+    this.up = this.up.bind(this);
+    this.down = this.down.bind(this);
+    this.onBlur = this.onBlur.bind(this);
+    this.onFocus = this.onFocus.bind(this);
+    this.onChange = this.onChange.bind(this);
+    this.onKeyDown = this.onKeyDown.bind(this);
+    this.onStepMouseDown = this.onStepMouseDown.bind(this);
+    this.onStepMouseDown = this.onStepMouseDown.bind(this);
   }
 
   componentWillMount() {
@@ -278,8 +287,8 @@ export class NumberInput extends React.Component {
           ref="down"
           label="-"
           disabled={props.disabled}
-          onMouseDown={this.onStepMouseDown.bind(this)}
-          onClick={downDisabledClass ? ()=>{} : this.down.bind(this)}
+          onMouseDown={this.onStepMouseDown}
+          onClick={downDisabledClass ? ()=>{} : this.down}
           style={leftButtonStyle}/>
         <TextField
           ref="input"
@@ -287,23 +296,23 @@ export class NumberInput extends React.Component {
           hintText={props.hintText}
           floatingLabelText={props.floatingLabelText}
           autoComplete="off"
-          onFocus={this.onFocus.bind(this)}
-          onBlur={this.onBlur.bind(this)}
-          onKeyDown={this.onKeyDown.bind(this)}
+          onFocus={this.onFocus}
+          onBlur={this.onBlur}
+          onKeyDown={this.onKeyDown}
           autoFocus={props.autoFocus}
           readOnly={props.readOnly}
           disabled={props.disabled}
           max={props.max}
           min={props.min}
           name={props.name}
-          onChange={this.onChange.bind(this)}
+          onChange={this.onChange}
           style={inputStyle}/>
         <FlatButton
           ref="up"
           label="+"
           disabled={props.disabled}
-          onMouseDown={this.onStepMouseDown.bind(this)}
-          onClick={upDisabledClass ? ()=>{} : this.up.bind(this)}
+          onMouseDown={this.onStepMouseDown}
+          onClick={upDisabledClass ? ()=>{} : this.up}
           style={rightButtonStyle}/>
       </div>
     );
