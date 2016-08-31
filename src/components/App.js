@@ -1,5 +1,5 @@
-import React, { PropTypes } from 'react';
-import { Link, IndexLink } from 'react-router';
+import React, {PropTypes} from 'react';
+import {Link, IndexLink} from 'react-router';
 
 const App = (props) => {
   return (
@@ -7,6 +7,8 @@ const App = (props) => {
       <IndexLink to="/">Home</IndexLink>
       {' | '}
       <Link to="/material-ui">Material UI</Link>
+      {' | '}
+      <Link to="/number-input">Number Input</Link>
       {' | '}
       <Link to="/about">About</Link>
       <br/>

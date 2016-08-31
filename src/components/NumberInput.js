@@ -4,7 +4,7 @@ import React, {PropTypes} from 'react';
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
-//NumberInput is based on rc-input-number
+// NumberInput is based on rc-input-number
 export class NumberInput extends React.Component {
 
   constructor() {
@@ -48,7 +48,6 @@ export class NumberInput extends React.Component {
 
   onChange(event) {
     const value = this.toPrecisionAsStep(event.target.value.trim());
-    // console.log('onChange', value > this.props.max);
     //If the value is greater than the max then set value tp max
     this.setInputValue(value > this.props.max ? this.props.max : value);
   }
@@ -68,7 +67,6 @@ export class NumberInput extends React.Component {
   }
 
   onFocus(...args) {
-    //console.log('onFocus');
     this.setState({
       focused: true
     });
@@ -76,7 +74,6 @@ export class NumberInput extends React.Component {
   }
 
   onBlur(e, ...args) {
-    //console.log('onBlur');
     this.setState({
       focused: false
     });
@@ -89,7 +86,6 @@ export class NumberInput extends React.Component {
   }
 
   onStepMouseDown(e) {
-    //console.log('onStepMouseDown');
     e.preventDefault();
     const value = this.getCurrentValidValue(this.state.inputValue);
     this.setState({ value });
@@ -157,7 +153,6 @@ export class NumberInput extends React.Component {
   }
 
   upStep(val) {
-    //console.log('upStep');
     const {
       step,
       min
@@ -173,7 +168,6 @@ export class NumberInput extends React.Component {
   }
 
   downStep(val) {
-    //console.log('downStep');
     const {
       step,
       min
@@ -189,7 +183,6 @@ export class NumberInput extends React.Component {
   }
 
   step(type, e) {
-    //console.log('step');
     if (e) {
       e.preventDefault();
     }
@@ -212,17 +205,14 @@ export class NumberInput extends React.Component {
   }
 
   down(e) {
-    //console.log('down');
     this.step('down', e);
   }
 
   up(e) {
-    //console.log('up');
     this.step('up', e);
   }
 
   focus() {
-    //console.log('focus');
     this.refs.input.focus();
   }
 
