@@ -8,8 +8,7 @@ The component below is the NumberInput. It can be used to input numbers between 
 
 The component below is the SpeedDial. There are two states of the SpeedDial. In its closed state, a single component, FloatingActionButton, is shown. Whan the user hovers over or clicks/taps on the button, one or more other FloatingActionButton are shown and can be used to execute actions.
 
-<img width="91" alt="screen shot 2016-09-04 at 10 09 46 am" src="https://cloud.githubusercontent.com/assets/5733481/18231449/fe9e98f6-7287-11e6-988a-eec27166da8d.png">
-<img width="123" alt="screen shot 2016-09-04 at 10 10 29 am" src="https://cloud.githubusercontent.com/assets/5733481/18231452/11ca7a44-7288-11e6-97ff-266ad196981e.png">
+<img width="234" alt="screen shot 2016-09-04 at 10 20 42 am" src="https://cloud.githubusercontent.com/assets/5733481/18231508/5cbf6bf8-7289-11e6-8441-d53e746ca420.png">
  
 React Material UI Components began life as React Slingshot. The original project has been trimmed down, updated to the lastest repositories with additional repositories to support the material-ui project and new material-ui components addded. So over time, this project will diverge greatly from its origin, but will always appreciate the original project. React Slingshot is a comprehensive starter kit for rapid application development using React.
 
