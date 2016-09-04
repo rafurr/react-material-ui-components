@@ -1,0 +1,274 @@
+
+/**
+  * Initial code based on below but modified initially by rfurr
+  * speeddial - Speed dial button inspired by Google Material design
+  *
+  * @version v0.2.4
+  * @homepage https://github.com/iliketomatoes/speeddial
+  * @license MIT
+  * @author Giancarlo Soverini
+  */
+
+// generic transform
+@mixin transform($transforms) {
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+.speed-dial {
+  position: absolute;
+  display: inline-block;
+}
+
+.speed-dial-list {
+  text-align: center;
+
+  // Properties dealing with initial state
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+
+  // Constant properties
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -webkit-flex-wrap: nowrap;
+  -ms-flex-wrap: nowrap;
+  flex-wrap: nowrap;
+
+  -webkit-justify-content: flex-start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+
+  -webkit-align-content: stretch;
+  -ms-flex-line-pack: stretch;
+  align-content: stretch;
+
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+
+  align-items: center;
+
+  //position: absolute;
+
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  li {
+    display: inline-block;
+    -webkit-order: 0;
+    -ms-flex-order: 0;
+    order: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    -webkit-align-self: auto;
+    -ms-flex-item-align: auto;
+    align-self: auto;
+  }
+}
+
+.speed-dial-option {
+  // Initial state for the list of options items
+  @include transform(scale(0));
+}
+
+/* UP */
+.speed-dial-up {
+  //background: red;
+
+  .speed-dial-list {
+    //background: pink;
+    -webkit-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse;
+  }
+
+  &:not(.speed-dial-small) .speed-dial-list {
+    padding-bottom: 4px;
+
+    li {
+      margin: 0 0 10px 0;
+    }
+  }
+
+  &.speed-dial-small .speed-dial-list {
+    padding-bottom: 1px;
+
+    li {
+      margin: 0 0 9px 0;
+    }
+  }
+
+}
+
+/* DOWN */
+.speed-dial-down {
+  //background: red;
+
+  .speed-dial-list {
+    //background: pink;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  &:not(.speed-dial-small) .speed-dial-list {
+    padding-top: 4px;
+
+    li {
+      margin: 10px 0 0 0;
+    }
+  }
+
+  &.speed-dial-small .speed-dial-list {
+    padding-top: 1px;
+
+    li {
+      margin: 9px 0 0 0;
+    }
+  }
+
+}
+
+/* LEFT */
+.speed-dial-left {
+  //background: red;
+
+  .speed-dial-list {
+    //background: pink;
+    -webkit-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+  }
+
+  &:not(.speed-dial-small) .speed-dial-list {
+    bottom: 0;
+    padding-right: 14px;
+    position: absolute;
+    right: 56px;
+    height: 56px;
+
+    li {
+      margin: 0 0 0 10px;
+    }
+  }
+
+  &.speed-dial-small .speed-dial-list{
+    bottom: 0;
+    padding-right: 11px;
+    position: absolute;
+    right: 40px;
+    height: 40px;
+
+    li {
+      margin: 0 0 0 9px;
+    }
+  }
+
+}
+
+/* RIGHT */
+.speed-dial-right {
+  //background: red;
+
+  .speed-dial-list {
+    //background: pink;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  &:not(.speed-dial-small) .speed-dial-list {
+    bottom: 0;
+    padding-left: 14px;
+    position: absolute;
+    left: 56px;
+    height: 56px;
+
+    li {
+      margin: 0 10px 0 0;
+    }
+  }
+
+  &.speed-dial-small .speed-dial-list {
+    bottom: 0;
+    padding-left: 11px;
+    position: absolute;
+    left: 40px;
+    height: 40px;
+
+    li {
+      margin: 0 9px 0 0;
+    }
+  }
+
+}
+
+.speed-dial-list.is-visible {
+  visibility: visible;
+  pointer-events: auto;
+  opacity: 1;
+
+  .speed-dial-option {
+    -webkit-animation-name: enter;
+    animation-name: enter;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+  }
+}
+
+.speed-dial-list.is-hidden {
+  visibility: hidden;
+  pointer-events: auto;
+  opacity: 1;
+
+  .speed-dial-option {
+    -webkit-animation-name: leave;
+    animation-name: leave;
+    -webkit-animation-fill-mode: backwards;
+    animation-fill-mode: backwards;
+    -webkit-animation-duration: 0.2s;
+    animation-duration: 0.2s;
+  }
+}
+
+@-webkit-keyframes enter {
+  from {
+    @include transform(scale(0));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+
+@keyframes enter {
+  from {
+    @include transform(scale(0));
+  }
+  to {
+    @include transform(scale(1));
+  }
+}
+
+@-webkit-keyframes leave {
+  from {
+    @include transform(scale(1));
+  }
+  to {
+    @include transform(scale(0));
+  }
+}
+
+@keyframes leave {
+  from {
+    @include transform(scale(1));
+  }
+  to {
+    @include transform(scale(0));
+  }
+}

@@ -8,7 +8,9 @@ const App = (props) => {
       {' | '}
       <Link to="/material-ui">Material UI</Link>
       {' | '}
-      <Link to="/number-input">Number Input</Link>
+      <Link to="/speed-dial">SpeedDial</Link>
+      {' | '}
+      <Link to="/number-input">NumberInput</Link>
       {' | '}
       <Link to="/about">About</Link>
       <br/>
