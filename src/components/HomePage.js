@@ -5,12 +5,12 @@ import {Link} from 'react-router';
 const HomePage = () => {
   return (
     <div>
-      <h1>React Material UI Components</h1>
+      <h1>React Material-UI Components</h1>
 
       <h2>Get Started</h2>
 
       <ol>
-        <li>View the <Link to="material-ui">Material UI Components </Link></li>
+        <li>View the <Link to="material-ui">Material-UI Components </Link></li>
         <li>View the <Link to="number-input">NumberInput Component </Link></li>
       </ol>
     </div>

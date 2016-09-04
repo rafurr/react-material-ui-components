@@ -1,10 +1,19 @@
 /*eslint-disable react/no-set-state */
+
+/**
+ * Initial code is based on below but modified by Robert Furr
+ * rc-input-number - input number ui component for react
+ *
+ * @version v2.7.0
+ * @homepage https://github.com/fis-components/rc-input-number
+ * @license MIT
+ */
+
 import React, {PropTypes} from 'react';
 
 import TextField from 'material-ui/TextField';
 import FlatButton from 'material-ui/FlatButton';
 
-// NumberInput is based on rc-input-number
 export class NumberInput extends React.Component {
 
   constructor() {

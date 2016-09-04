@@ -1,4 +1,15 @@
 /*eslint-disable react/no-set-state */
+
+/**
+ * Initial code is based on below but modified by Robert Furr
+ * speeddial - Speed dial button inspired by Google Material design
+ *
+ * @version v0.2.4
+ * @homepage https://github.com/iliketomatoes/speeddial
+ * @license MIT
+ * @author Giancarlo Soverini
+ */
+
 import React, {PropTypes} from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Tooltip from 'material-ui/internal/Tooltip';
