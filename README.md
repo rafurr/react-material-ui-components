@@ -2,14 +2,14 @@
 
 The intent of this project is to showcase Material-UI components and how to use them. At some point, I may separate each of the components into their own projects.
 
-The component below is the NumberInput. It can be used to input numbers between min and max values. It can be used on a touch device via the left and right to decrement and increment, respectively, the values. The keyboard numbers and up and down arrows can also be used.
-
-<img width="315" alt="screen shot 2016-08-31 at 6 30 27 pm" src="https://cloud.githubusercontent.com/assets/5733481/18148680/2cbf99e2-6fa9-11e6-8453-0b55db110cb5.png">
-
 The component below is the SpeedDial. There are two states of the SpeedDial. In its closed state, a single component, FloatingActionButton, is shown. Whan the user hovers over or clicks/taps on the button, one or more other FloatingActionButton are shown and can be used to execute actions.
 
 <img width="234" alt="screen shot 2016-09-04 at 10 20 42 am" src="https://cloud.githubusercontent.com/assets/5733481/18231508/5cbf6bf8-7289-11e6-8441-d53e746ca420.png">
  
+The component below is the NumberInput. It can be used to input numbers between min and max values. It can be used on a touch device via the left and right to decrement and increment, respectively, the values. The keyboard numbers and up and down arrows can also be used.
+
+<img width="315" alt="screen shot 2016-08-31 at 6 30 27 pm" src="https://cloud.githubusercontent.com/assets/5733481/18148680/2cbf99e2-6fa9-11e6-8453-0b55db110cb5.png">
+
 React Material UI Components began life as React Slingshot. The original project has been trimmed down, updated to the lastest repositories with additional repositories to support the material-ui project and new material-ui components addded. So over time, this project will diverge greatly from its origin, but will always appreciate the original project. React Slingshot is a comprehensive starter kit for rapid application development using React.
 
 Why React Slingshot?
