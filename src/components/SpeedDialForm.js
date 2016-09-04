@@ -1,7 +1,5 @@
 import React, {PropTypes} from 'react';
 
-import RaisedButton from 'material-ui/RaisedButton';
-
 import '../styles/speed-dial.scss';
 import {SpeedDial} from './SpeedDial';
 
@@ -56,7 +54,7 @@ class SpeedDialForm extends React.Component {
     return (
       <div>
         <h2>SpeedDial Component</h2>
-        <RaisedButton label={'Reset'} primary={true} style={{marginBottom: 10}} />
+        <h4>Note: Look Bottom Right</h4>
         {this.makeSpeedDial('up1-speed-dial', false, true, 'up', 'left')}
       </div>
     );
