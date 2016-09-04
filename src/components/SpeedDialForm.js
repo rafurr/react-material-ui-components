@@ -2,13 +2,15 @@ import React, {PropTypes} from 'react';
 
 import RaisedButton from 'material-ui/RaisedButton';
 
+import '../styles/speed-dial.scss';
 import {SpeedDial} from './SpeedDial';
+
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import ContentMail from 'material-ui/svg-icons/content/mail';
 import ContentFlag from 'material-ui/svg-icons/content/flag';
 import ContentSort from 'material-ui/svg-icons/content/sort';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
-import {red300, yellow700, blue300, green600} from 'material-ui/styles/colors';
+import {blue300, green300, yellow300, red300} from 'material-ui/styles/colors';
 
 class SpeedDialForm extends React.Component {
 
@@ -37,10 +39,10 @@ class SpeedDialForm extends React.Component {
         direction={direction}
         tooltipDirection={tooltipDirection}
         open={open}>
-        <FloatingActionButton backgroundColor={green600} data-tooltip={'Mail'} mini={miniSubAction}>
+        <FloatingActionButton backgroundColor={green300} data-tooltip={'Mail'} mini={miniSubAction}>
           <ContentMail />
         </FloatingActionButton>
-        <FloatingActionButton backgroundColor={yellow700} data-tooltip={'Sort'} mini={miniSubAction}>
+        <FloatingActionButton backgroundColor={yellow300} data-tooltip={'Sort'} mini={miniSubAction}>
           <ContentSort />
         </FloatingActionButton>
         <FloatingActionButton backgroundColor={red300} data-tooltip={'Flag'} mini={miniSubAction}>
@@ -54,9 +56,8 @@ class SpeedDialForm extends React.Component {
     return (
       <div>
         <h2>SpeedDial Component</h2>
-        {this.makeSpeedDial('up1-speed-dial', false, true, 'up', 'left', false)}
         <RaisedButton label={'Reset'} primary={true} style={{marginBottom: 10}} />
-
+        {this.makeSpeedDial('up1-speed-dial', false, true, 'up', 'left')}
       </div>
     );
   }

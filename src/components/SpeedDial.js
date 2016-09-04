@@ -3,21 +3,20 @@ import React, {PropTypes} from 'react';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Tooltip from 'material-ui/internal/Tooltip';
 
-import '../styles/speed-dial.scss';
-
 export class SpeedDial extends React.Component {
+
   static propTypes = {
-    className: PropTypes.string,
-    speedDialElement: PropTypes.node,
-    style: PropTypes.object,
     open: PropTypes.bool,
+    style: PropTypes.object,
+    className: PropTypes.string,
     direction: PropTypes.string,
-    tooltipDirection: PropTypes.string,
     onMouseEnter: PropTypes.func,
     onMouseLeave: PropTypes.func,
-    children: React.PropTypes.oneOfType([
-      React.PropTypes.arrayOf(React.PropTypes.node),
-      React.PropTypes.node
+    speedDialElement: PropTypes.node,
+    tooltipDirection: PropTypes.string,
+    children: PropTypes.oneOfType([
+      PropTypes.arrayOf(PropTypes.node),
+      PropTypes.node
     ])
   };
 
@@ -65,8 +64,7 @@ export class SpeedDial extends React.Component {
   }
 
   buildItems() {
-    //ToDo: Work on tooltip location option, i.e, for up tooltip can be either on the left or right side. etc.
-    //Todo: another option is to have the tooltips show only when hovered over
+    //Todo: Option to have the tooltips show only when hovered over
     const {
       open,
       direction,
@@ -114,61 +112,52 @@ export class SpeedDial extends React.Component {
         </li>
       );});
   }
-/*
- <div style={{verticalAlign:'middle', background:'pink'}}>
- <span style={{background:'red'}}>Hello</span>
- <FloatingActionButton style={{verticalAlign:'middle'}} mini={miniSubAction}>
- <ContentMail />
- </FloatingActionButton>
- </div>
-*/
+
   calculateWidth(miniButton, miniItem, itemsCount) {
+    const sizeOffset = miniButton ? 11 : 14;
+    const sizeSeparator = miniItem ? 9 : 10;
     const floatingActionButton = getMuiTheme().floatingActionButton;
-    const sizeButton = miniButton ? floatingActionButton.miniSize : floatingActionButton.buttonSize;
-    let sizeOffset = miniButton ? 11 : 14;
-    sizeOffset = !miniButton && miniItem ? sizeOffset + 2 : sizeOffset;
     const sizeItem = miniItem ? floatingActionButton.miniSize : floatingActionButton.buttonSize;
-    const separatorSize = miniItem ? 9 : 10;
-    return sizeButton + sizeOffset + (itemsCount * sizeItem) + ((itemsCount - 1) * separatorSize);
+    const sizeButton = miniButton ? floatingActionButton.miniSize : floatingActionButton.buttonSize;
+
+    const buttonOffset = !miniButton && miniItem ? sizeOffset + 2 : sizeOffset;
+    return sizeButton + buttonOffset + (itemsCount * sizeItem) + ((itemsCount - 1) * sizeSeparator);
   }
 
   render() {
     const {
-      className,
-      speedDialElement,
-      style,
       open,
+      style,
+      children,
+      className,
       direction,
-      children
+      speedDialElement
     } = this.props;
 
     const items = this.buildItems();
+    const miniActions = children[0].props.mini;
+    const miniSpeedDial = speedDialElement.props.mini;
+    const visibleClassName = open ? 'is-visible' : 'is-hidden';
+    const miniClassName = miniSpeedDial ? ' speed-dial-small' : '';
 
-    const isVisibleClassName = open ? 'is-visible' : 'is-hidden';
-
-    const smallClassName = speedDialElement.props.mini ? ' speed-dial-small' : '';
-    
-    let divStyle=style;
-    if (direction=='right') {
-      const divSize = this.calculateWidth(speedDialElement.props.mini, children[0].props.mini, children.length);
-      divStyle={textAlign:'left', width: divSize+'px', ...divStyle};
-    }
-    if (direction=='left') {
-      const divSize = this.calculateWidth(speedDialElement.props.mini, children[0].props.mini, children.length);
-      divStyle={textAlign:'right', width: divSize+'px', ...divStyle};
+    let divStyle = style;
+    if (direction=='left' || direction=='right') {
+      const divSize = this.calculateWidth(miniSpeedDial, miniActions, children.length) + 'px';
+      const textAlign = direction === 'right' ? 'left' : 'right';
+      divStyle = {...style, textAlign: textAlign, width: divSize};
     }
 
     return (
       <div ref={(ref) => this._speeddial = ref}
            style={divStyle}
-           className={className + smallClassName + ' speed-dial-' + direction}
+           className={className + miniClassName + ' speed-dial-' + direction}
            onMouseEnter={e => this.handleMouseEnter(e)}
            onMouseLeave={e => this.handleMouseLeave(e)}>
-        {(direction==='down' || direction==='right') && speedDialElement}
-        <ul className={'speed-dial-list ' + isVisibleClassName}>
+        {(direction === 'down' || direction === 'right') && speedDialElement}
+        <ul className={'speed-dial-list ' + visibleClassName}>
           {items}
         </ul>
-        {(direction==='up' || direction==='left') && speedDialElement}
+        {(direction === 'up' || direction === 'left') && speedDialElement}
       </div>
     );
   }
