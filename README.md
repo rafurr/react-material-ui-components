@@ -1,6 +1,6 @@
-# React Material UI Components!
+# React Material-UI Components!
 
-The intent of this project is to showcase Material-UI components and how to use them. At some point, I may separate each of the components into their own projects.
+The intent of this project is to showcase new Material-UI components and how to use them. At some point, I may separate each of the components into their own projects.
 
 The component below is the SpeedDial. There are two states of the SpeedDial. In its closed state, a single component, FloatingActionButton, is shown. Whan the user hovers over or clicks/taps on the button, one or more other FloatingActionButton are shown and can be used to execute actions.
 
@@ -10,7 +10,9 @@ The component below is the NumberInput. It can be used to input numbers between 
 
 <img width="315" alt="screen shot 2016-08-31 at 6 30 27 pm" src="https://cloud.githubusercontent.com/assets/5733481/18148680/2cbf99e2-6fa9-11e6-8453-0b55db110cb5.png">
 
-React Material UI Components began life as React Slingshot. The original project has been trimmed down, updated to the lastest repositories with additional repositories to support the material-ui project and new material-ui components addded. So over time, this project will diverge greatly from its origin, but will always appreciate the original project. React Slingshot is a comprehensive starter kit for rapid application development using React.
+React Material-UI Components began life as React Slingshot. The original project has been trimmed down, updated to the lastest repositories with additional repositories to support the Material-UI project and new Material-UI components addded. So over time, this project will diverge greatly from its origin, but will always appreciate the original project.
+
+React Slingshot is a comprehensive starter kit for rapid application development using React and Redux.
 
 Why React Slingshot?
 
