@@ -16,27 +16,21 @@ class SpeedDialForm extends React.Component {
     super();
   }
 
-  handleSpeedDialClick(menuName) {
-    //this.props.actions.setMenuName(this.props.menuName !== menuName ? menuName : '');
-  }
+  makeSpeedDial(className, miniAction, miniSubAction, direction, tooltipDirection) {
+    const {
+      open,
+      onMouseEnter,
+      onMouseLeave,
+      onClick
+    } = this.props;
 
-  handleMouseEnter(e, speedDial) {
-    // this.props.actions.setMenuName(speedDial.props.name);
-  }
-
-  handleMouseLeave(e, speedDial) {
-    // this.props.actions.setMenuName('');
-  }
-
-  makeSpeedDial(className, miniAction, miniSubAction, direction, tooltipDirection, open, tooltip='') {
     return (
       <SpeedDial
         name={name}
         className={className}
-        onMouseEnter={this.handleMouseEnter.bind(this)}
-        onMouseLeave={this.handleMouseLeave.bind(this)}
+        onMouseLeave={onMouseLeave}
         speedDialElement={
-          <FloatingActionButton backgroundColor={blue300} mini={miniAction} onClick={() => this.handleSpeedDialClick(open)}>
+          <FloatingActionButton backgroundColor={blue300} mini={miniAction} onMouseEnter={onMouseEnter} onClick={onClick}>
           <ContentAdd />
           </FloatingActionButton>
         }
@@ -57,15 +51,11 @@ class SpeedDialForm extends React.Component {
   }
 
   render() {
-    const {
-      label
-    } = this.props;
-
     return (
       <div>
         <h2>SpeedDial Component</h2>
-        {this.makeSpeedDial('up1-speed-dial', false, true, 'up', 'left', false, 'Tooltip')}
-        <RaisedButton label={label} primary={true} style={{marginBottom: 10}} />
+        {this.makeSpeedDial('up1-speed-dial', false, true, 'up', 'left', false)}
+        <RaisedButton label={'Reset'} primary={true} style={{marginBottom: 10}} />
 
       </div>
     );
@@ -73,7 +63,10 @@ class SpeedDialForm extends React.Component {
 }
 
 SpeedDialForm.propTypes = {
-  label: PropTypes.string
+  open: PropTypes.bool,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
+  onClick: PropTypes.func
 };
 
 export default SpeedDialForm;

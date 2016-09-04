@@ -52,7 +52,7 @@ NumberInputForm.propTypes = {
     PropTypes.string,
     PropTypes.number
   ]),
-  onNumberChange: PropTypes.func,
+  onNumberChangce: PropTypes.func,
   onResetClicked: PropTypes.func
 };
 
