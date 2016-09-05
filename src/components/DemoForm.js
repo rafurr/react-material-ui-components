@@ -19,8 +19,8 @@ class DemoForm extends React.Component {
       <div>
         <h2>Demo Redux</h2>
         <h4>Count: {count}</h4>
-        <RaisedButton label='Increment' onClick={onIncrementClicked} primary={true} style={{marginRight: 10}} />
-        <RaisedButton label='Reset' onClick={onResetClicked} primary={true} style={{marginBottom: 10}} />
+        <RaisedButton label="Increment" onClick={onIncrementClicked} primary={true} style={{marginRight: 10}} />
+        <RaisedButton label="Reset" onClick={onResetClicked} primary={true} style={{marginBottom: 10}} />
       </div>
     );
   }
