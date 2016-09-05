@@ -8,8 +8,8 @@ The component below is the SpeedDial. There are two states of the SpeedDial. In 
  
 The component below is the NumberInput. It can be used to input numbers between min and max values. It can be used on a touch device via the left and right to decrement and increment, respectively, the values. The keyboard numbers and up and down arrows can also be used.
 
-<img width="211" alt="screen shot 2016-09-05 at 9 45 10 am" src="https://cloud.githubusercontent.com/assets/5733481/18249727/1598431a-734e-11e6-951f-2ee703535eed.png">
-<img width="211" alt="screen shot 2016-09-05 at 9 45 35 am" src="https://cloud.githubusercontent.com/assets/5733481/18249728/1599ba4c-734e-11e6-9d42-471aeb7e0b65.png">
+<img width="203" alt="screen shot 2016-09-05 at 9 38 45 am" src="https://cloud.githubusercontent.com/assets/5733481/18249921/c125d030-734e-11e6-9939-599cd61f0733.png">
+<img width="203" alt="screen shot 2016-09-05 at 9 45 35 am" src="https://cloud.githubusercontent.com/assets/5733481/18249920/c1252cb6-734e-11e6-83f4-55e8f1a6c216.png">
 
 React Material-UI Components began life as React Slingshot. The original project has been trimmed down, updated to the lastest repositories with additional repositories to support the Material-UI project and new Material-UI components addded. So over time, this project will diverge greatly from its origin, but will always appreciate the original project.
 
