@@ -20,27 +20,47 @@ class NumberInputForm extends React.Component {
     return (
       <div>
         <h2>NumberInput Component</h2>
+        hintText
         <NumberInput
-          style={{marginBottom: 10}}
+          style={{marginBottom: 10, width: 200}}
           name="NumberInput1"
           hintText={'Hint Text'}
           min={0}
-          max={1000}
+          max={100}
           value={value}
-          readOnly={false}
-          onChange={onNumberChange}
-          disabled={false} />
+          onChange={onNumberChange} />
+        hintText and floatingLabelText
         <NumberInput
-          style={{marginBottom: 10, width: 300}}
+          style={{marginBottom: 10}}
           name="NumberInput2"
           hintText={'Hint Text'}
           floatingLabelText={'Floating Label'}
           min={0}
-          max={1000}
+          max={100}
           value={value}
-          readOnly={false}
-          onChange={onNumberChange}
-          disabled={false} />
+          onChange={onNumberChange} />
+        readOnly
+        <NumberInput
+          style={{marginBottom: 10}}
+          name="NumberInput3"
+          hintText={'Hint Text'}
+          floatingLabelText={'Floating Label'}
+          min={0}
+          max={100}
+          value={value}
+          readOnly
+          onChange={onNumberChange} />
+        disabled
+        <NumberInput
+          style={{marginBottom: 10}}
+          name="NumberInput4"
+          hintText={'Hint Text'}
+          floatingLabelText={'Floating Label'}
+          min={0}
+          max={100}
+          value={value}
+          disabled
+          onChange={onNumberChange} />
         <RaisedButton label="Reset" primary={true} onClick={onResetClicked} />
       </div>
     );
@@ -52,7 +72,7 @@ NumberInputForm.propTypes = {
     PropTypes.string,
     PropTypes.number
   ]),
-  onNumberChangce: PropTypes.func,
+  onNumberChange: PropTypes.func,
   onResetClicked: PropTypes.func
 };
 

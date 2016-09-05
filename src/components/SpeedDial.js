@@ -1,7 +1,7 @@
 /*eslint-disable react/no-set-state */
 
 /**
- * Initial code is based on below but modified by Robert Furr
+ * Initial code is based on author below but modified by Robert Furr
  * speeddial - Speed dial button inspired by Google Material design
  *
  * @version v0.2.4
@@ -11,30 +11,11 @@
  */
 
 import React, {PropTypes} from 'react';
+
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import Tooltip from 'material-ui/internal/Tooltip';
 
 export class SpeedDial extends React.Component {
-
-  static propTypes = {
-    open: PropTypes.bool,
-    style: PropTypes.object,
-    className: PropTypes.string,
-    direction: PropTypes.string,
-    onMouseEnter: PropTypes.func,
-    onMouseLeave: PropTypes.func,
-    speedDialElement: PropTypes.node,
-    tooltipDirection: PropTypes.string,
-    children: PropTypes.oneOfType([
-      PropTypes.arrayOf(PropTypes.node),
-      PropTypes.node
-    ])
-  };
-
-  static defaultProps = {
-    direction: 'up',
-    tooltipDirection: 'left'
-  };
 
   constructor(props) {
     super(props);
@@ -58,18 +39,26 @@ export class SpeedDial extends React.Component {
   }
 
   handleMouseEnter(e) {
+    const {
+      onMouseEnter
+    } = this.props;
+
     if(!this.isMouseOver()) {
-      this.props.onMouseEnter && this.props.onMouseEnter(e, this);
+      onMouseEnter && onMouseEnter(e, this);
       this.setIsMouseOver();
     }
   }
 
   handleMouseLeave(e) {
+    const {
+      onMouseLeave
+    } = this.props;
+
     const rect = this._speeddial.getBoundingClientRect();
     const mouseInside = this.isMouseInside(e.clientX, e.clientY, rect);
 
     if (!mouseInside) {
-      this.props.onMouseLeave && this.props.onMouseLeave(e, this);
+      onMouseLeave && onMouseLeave(e, this);
       this.resetIsMouseOver();
     }
   }
@@ -173,3 +162,23 @@ export class SpeedDial extends React.Component {
     );
   }
 }
+
+SpeedDial.propTypes = {
+  open: PropTypes.bool,
+  style: PropTypes.object,
+  className: PropTypes.string,
+  direction: PropTypes.string,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
+  speedDialElement: PropTypes.node,
+  tooltipDirection: PropTypes.string,
+  children: PropTypes.oneOfType([
+    PropTypes.arrayOf(PropTypes.node),
+    PropTypes.node
+  ])
+};
+
+SpeedDial.defaultProps = {
+  direction: 'up',
+  tooltipDirection: 'left'
+};
