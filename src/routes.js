@@ -7,7 +7,7 @@ import DemoPage from './containers/DemoPage'; // eslint-disable-line import/no-n
 import SpeedDialPage from './containers/SpeedDialPage'; // eslint-disable-line import/no-named-as-default
 import NumberInputPage from './containers/NumberInputPage'; // eslint-disable-line import/no-named-as-default
 import AboutPage from './components/AboutPage.js';
-import NotFoundPage from './components/NotFoundPage.js';
+// import NotFoundPage from './components/NotFoundPage.js';
 
 export default (
   <Route path="/" component={App}>
@@ -16,6 +16,6 @@ export default (
     <Route path="speed-dial" component={SpeedDialPage}/>
     <Route path="number-input" component={NumberInputPage}/>
     <Route path="about" component={AboutPage}/>
-    <Route path="*" component={NotFoundPage}/>
+    <Route path="*" component={HomePage}/>
   </Route>
 );
