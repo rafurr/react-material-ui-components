@@ -12,7 +12,7 @@ const AboutPage = () => {
         This example app
       </p>
       <p>
-        <Link to="/badlink">Click this bad link</Link> to see the 404 page.
+        <Link to="/react-material-ui-components/badlink">Click this bad link</Link> to see the 404 page.
       </p>
     </div>
   );
