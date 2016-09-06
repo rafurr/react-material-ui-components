@@ -21,9 +21,9 @@ export default {
   entry: './src/index',
   target: 'web', // necessary per https://webpack.github.io/docs/testing.html#compile-and-test
   output: {
-    path: `${__dirname}/dist`,
-    publicPath: '/react-material-ui-components/dist/',
-    filename: '[name].[chunkhash].js'
+    path: `${__dirname}/demo`,
+    publicPath: '/react-material-ui-components/demo/',
+    filename: 'bundle.js'
   },
   plugins: [
     // Hash the files using MD5 so that their names change when the content changes.
@@ -36,7 +36,7 @@ export default {
     new webpack.DefinePlugin(GLOBALS),
 
     // Generate an external css file with a hash in the filename
-    new ExtractTextPlugin('[name].[contenthash].css'),
+    new ExtractTextPlugin('bundle.css'),
 
     // Generate HTML file that contains references to generated bundles. See here for how this works: https://github.com/ampedandwired/html-webpack-plugin#basic-usage
     new HtmlWebpackPlugin({
