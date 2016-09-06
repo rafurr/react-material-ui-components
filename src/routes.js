@@ -7,15 +7,15 @@ import DemoPage from './containers/DemoPage'; // eslint-disable-line import/no-n
 import SpeedDialPage from './containers/SpeedDialPage'; // eslint-disable-line import/no-named-as-default
 import NumberInputPage from './containers/NumberInputPage'; // eslint-disable-line import/no-named-as-default
 import AboutPage from './components/AboutPage.js';
-// import NotFoundPage from './components/NotFoundPage.js';
+import NotFoundPage from './components/NotFoundPage.js';
 
 export default (
-  <Route path="/" component={App}>
+  <Route path="/react-material-ui-components/" component={App}>
     <IndexRoute component={HomePage}/>
-    <Route path="react-material-ui-components/demo" component={DemoPage}/>
-    <Route path="react-material-ui-components/speed-dial" component={SpeedDialPage}/>
-    <Route path="react-material-ui-components/number-input" component={NumberInputPage}/>
-    <Route path="react-material-ui-components/about" component={AboutPage}/>
-    <Route path="*" component={HomePage}/>
+    <Route path="demo" component={DemoPage}/>
+    <Route path="speed-dial" component={SpeedDialPage}/>
+    <Route path="number-input" component={NumberInputPage}/>
+    <Route path="about" component={AboutPage}/>
+    <Route path="*" component={NotFoundPage}/>
   </Route>
 );
