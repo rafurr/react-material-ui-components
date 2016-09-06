@@ -6,13 +6,13 @@ const App = (props) => {
     <div>
       <IndexLink to="/">Home</IndexLink>
       {' | '}
-      <Link to="/demo">Demo</Link>
+      <Link to="/react-material-ui-components/demo">Demo</Link>
       {' | '}
-      <Link to="/speed-dial">SpeedDial</Link>
+      <Link to="/react-material-ui-components/speed-dial">SpeedDial</Link>
       {' | '}
-      <Link to="/number-input">NumberInput</Link>
+      <Link to="/react-material-ui-components/number-input">NumberInput</Link>
       {' | '}
-      <Link to="/about">About</Link>
+      <Link to="/react-material-ui-components/about">About</Link>
       <br/>
       {props.children}
     </div>
