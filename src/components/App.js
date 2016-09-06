@@ -4,7 +4,7 @@ import {Link, IndexLink} from 'react-router';
 const App = (props) => {
   return (
     <div>
-      <IndexLink to="/react-material-ui-components">Home</IndexLink>
+      <IndexLink to="/react-material-ui-components/">Home</IndexLink>
       {' | '}
       <Link to="/react-material-ui-components/demo">Demo</Link>
       {' | '}
