@@ -12,10 +12,10 @@ import AboutPage from './components/AboutPage.js';
 export default (
   <Route path="/" component={App}>
     <IndexRoute component={HomePage}/>
-    <Route path="/demo" component={DemoPage}/>
-    <Route path="/speed-dial" component={SpeedDialPage}/>
-    <Route path="/number-input" component={NumberInputPage}/>
-    <Route path="/about" component={AboutPage}/>
+    <Route path="/react-material-ui-components/demo" component={DemoPage}/>
+    <Route path="/react-material-ui-components/speed-dial" component={SpeedDialPage}/>
+    <Route path="/react-material-ui-components/number-input" component={NumberInputPage}/>
+    <Route path="/react-material-ui-components/about" component={AboutPage}/>
     <Route path="*" component={HomePage}/>
   </Route>
 );
