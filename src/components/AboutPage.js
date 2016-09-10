@@ -9,7 +9,7 @@ const AboutPage = () => {
     <div>
       <h2 className="alt-header">About</h2>
       <p>
-        This example app
+        A showcase of new React, Redux, and Material-UI components including SpeedDial, NumberInput, and others.
       </p>
       <p>
         <Link to="/badlink">Click this bad link</Link> to see the 404 page.
