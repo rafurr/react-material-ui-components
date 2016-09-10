@@ -273,6 +273,8 @@ export class NumberInput extends React.Component {
   styles() {
     const {
       style,
+      border,
+      buttonBorder,
       disabled,
       readOnly,
       floatingLabelText
@@ -295,11 +297,14 @@ export class NumberInput extends React.Component {
     buttonStyle = {...buttonStyle, borderRadius: '0', minWidth: '40px', width: '40px'};
     buttonStyle = disabled || readOnly ? {...buttonStyle, cursor: 'not-allowed'} : buttonStyle;
 
+    const leftButtonStyle = buttonBorder ? {...buttonStyle, border: buttonBorder, borderRadius: 2} : {...buttonStyle, borderRight: border};
+    const rightButtonStyle = buttonBorder ? {...buttonStyle, border: buttonBorder, borderRadius: 2} : {...buttonStyle, borderLeft: border};
+
     return {
-      componentStyle: {...componentStyle, ...style, border: "1px solid #ccc", borderRadius: 2},
+      componentStyle: {...componentStyle, ...style, border: border, borderRadius: 2},
       inputStyle: {...inputStyle, marginLeft: '5px', marginRight: '5px', width: 'calc(100% - 90px)'}, //90 = 40 + 40 + 10 + 2
-      leftButtonStyle: {...buttonStyle, borderRight: '1px solid #ccc'},
-      rightButtonStyle: {...buttonStyle, borderLeft: '1px solid #ccc'}
+      leftButtonStyle: leftButtonStyle,
+      rightButtonStyle: rightButtonStyle
     };
   }
 
@@ -406,6 +411,8 @@ NumberInput.propTypes = {
   disabled: PropTypes.bool,
   autoFocus: PropTypes.bool,
   nopOnBlur: PropTypes.bool,
+  border: PropTypes.string,
+  buttonBorder: PropTypes.string,
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.number
@@ -414,7 +421,7 @@ NumberInput.propTypes = {
     PropTypes.string,
     PropTypes.number
   ])
-};
+};``
 
 NumberInput.defaultProps = {
   min: -Infinity,
@@ -425,6 +432,7 @@ NumberInput.defaultProps = {
   readOnly: false,
   disabled: false,
   nopOnBlur: false,
+  border: '1px solid #e0e0e0',
   onBlur: ()=>{},
   onFocus: ()=>{},
   onChange: ()=>{},
