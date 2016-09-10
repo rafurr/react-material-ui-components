@@ -16,7 +16,7 @@ class SpeedDialForm extends React.Component {
     super();
   }
 
-  makeSpeedDial(className, miniAction, miniSubAction, direction, tooltipDirection) {
+  makeSpeedDial(className, miniAction, miniSubAction, direction, tooltip) {
     const {
       open,
       onMouseEnter,
@@ -35,7 +35,7 @@ class SpeedDialForm extends React.Component {
           </FloatingActionButton>
         }
         direction={direction}
-        tooltipDirection={tooltipDirection}
+        tooltip={tooltip}
         open={open}>
         <FloatingActionButton backgroundColor={green300} data-tooltip={'Mail'} mini={miniSubAction}>
           <ContentMail />
@@ -51,11 +51,15 @@ class SpeedDialForm extends React.Component {
   }
 
   render() {
+    const tooltip = {
+      direction: 'left',
+      showOnHover: true
+    };
     return (
       <div>
         <h2>SpeedDial Component</h2>
         <h4>Note: Look Bottom Right</h4>
-        {this.makeSpeedDial('up1-speed-dial', false, true, 'up', 'left')}
+        {this.makeSpeedDial('up1-speed-dial', false, true, 'up', tooltip)}
       </div>
     );
   }

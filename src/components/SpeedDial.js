@@ -19,7 +19,11 @@ export class SpeedDial extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {isMouseOver: false};
+    this.state = {isMouseOver: false, tooltip: ''};
+  }
+
+  resetState() {
+    this.setState({isMouseOver: false, tooltip: ''});
   }
 
   isMouseOver() {
@@ -27,11 +31,23 @@ export class SpeedDial extends React.Component {
   }
 
   resetIsMouseOver() {
-    this.setState({isMouseOver: false});
+    this.setState({...this.state, isMouseOver: false});
   }
 
   setIsMouseOver() {
-    this.setState({isMouseOver: true});
+    this.setState({...this.state, isMouseOver: true});
+  }
+
+  tooltip() {
+    return this.state.tooltip;
+  }
+
+  resetTooltip() {
+    this.setState({...this.state, tooltip: ''});
+  }
+
+  setTooltip(tooltip) {
+    this.setState({...this.state, tooltip: tooltip});
   }
 
   isMouseInside(x, y, rect) {
@@ -59,16 +75,25 @@ export class SpeedDial extends React.Component {
 
     if (!mouseInside) {
       onMouseLeave && onMouseLeave(e, this);
-      this.resetIsMouseOver();
+      this.resetState();
     }
   }
 
+  handleItemMouseEnter(e, item) {
+    // console.log('Enter', this.tooltip(), item.props['data-tooltip']);
+    this.setTooltip(item.props['data-tooltip']);
+  }
+
+  handleItemMouseLeave(e, item) {
+    // console.log('Leave', this.tooltip(), item.props['data-tooltip']);
+    this.resetTooltip();
+  }
+
   buildItems() {
-    //Todo: Option to have the tooltips show only when hovered over
     const {
       open,
       direction,
-      tooltipDirection,
+      tooltip,
       children
     } = this.props;
 
@@ -77,23 +102,30 @@ export class SpeedDial extends React.Component {
     if (direction === 'left' || direction === 'right') {
       top = mini ? -15 : -15;
       right = mini ? 3 : 11;
-      if (tooltipDirection === 'bottom') {
+      if (tooltip.direction === 'bottom') {
         top = mini ? 64 : 80;
       }
     } else {
       top = mini ? 22 : 30;
       right = mini ? 50 : 65;
-      if (tooltipDirection === 'right') {
+      if (tooltip.direction === 'right') {
         right = mini ? -45 : -45;
       }
     }
     let i = open ? 0 : children.length - 1;
     let o = open ? 1 : -1;
+
     return children.map((item, index) => {
       const delay = 0.05 * i + 's';
       i = i + o;
+      const showTooltip = tooltip.showOnHover ?
+        this.tooltip() === item.props['data-tooltip'] :
+        true;
+
       return (
         <li
+          onMouseEnter={e => this.handleItemMouseEnter(e, item)}
+          onMouseLeave={e => this.handleItemMouseLeave(e, item)}
           key={'item' + index}
           style={{
             WebkitAnimationDelay: delay,
@@ -102,7 +134,7 @@ export class SpeedDial extends React.Component {
           className="speed-dial-option">
           {item}
           {item.props['data-tooltip'] && <Tooltip
-            show
+            show={showTooltip}
             label={item.props['data-tooltip']}
             style={{right: right, top:top}}
             horizontalPosition="left"
@@ -171,7 +203,7 @@ SpeedDial.propTypes = {
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
   speedDialElement: PropTypes.node,
-  tooltipDirection: PropTypes.string,
+  tooltip: PropTypes.object,
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.node),
     PropTypes.node
@@ -180,5 +212,8 @@ SpeedDial.propTypes = {
 
 SpeedDial.defaultProps = {
   direction: 'up',
-  tooltipDirection: 'left'
+  tooltip: {
+    direction: 'left',
+    showOnHover: true
+  }
 };
