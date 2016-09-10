@@ -10,7 +10,7 @@ import AboutPage from './components/AboutPage.js';
 import NotFoundPage from './components/NotFoundPage.js';
 
 export default (
-  <Route path="/react-material-ui-components/" component={App}>
+  <Route path="/" component={App}>
     <IndexRoute component={HomePage}/>
     <Route path="demo" component={DemoPage}/>
     <Route path="speed-dial" component={SpeedDialPage}/>

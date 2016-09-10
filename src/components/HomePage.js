@@ -10,8 +10,8 @@ const HomePage = () => {
       <h2>Get Started</h2>
 
       <ol>
-        <li>View the <Link to="/react-material-ui-components/speed-dial">SpeedDial Component</Link></li>
-        <li>View the <Link to="/react-material-ui-components/number-input">NumberInput Component </Link></li>
+        <li>View the <Link to="/speed-dial">SpeedDial Component</Link></li>
+        <li>View the <Link to="/number-input">NumberInput Component </Link></li>
       </ol>
     </div>
   );
