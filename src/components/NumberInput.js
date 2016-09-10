@@ -285,7 +285,7 @@ export class NumberInput extends React.Component {
     if (floatingLabelText) {
       componentStyle = {height: 56, width: 200};
       inputStyle = {transform: 'translate(0, -12px)'};
-      buttonStyle = {transform: 'translate(0, -23px)', minHeight: '57px', height: '57px'};
+      buttonStyle = {transform: 'translate(0, -23px)', minHeight: '57px', lineHeight: '57px'};
     } else {
       componentStyle = {height: 36, width: 200};
       inputStyle = {transform: 'translate(0, -8px)'};
