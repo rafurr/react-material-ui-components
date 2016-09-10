@@ -2,8 +2,6 @@ import React, {PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import DemoForm from '../components/DemoForm';
-
 import {
   setCount
 } from '../actions/demoActions';
@@ -45,13 +43,33 @@ export class DemoPage extends React.Component {
   }
 
   render() {
+    const {
+      count
+    } = this.props;
+
     return (
-      <DemoForm
-        onDecrementClicked={this.handleDecrementClicked}
-        onIncrementClicked={this.handleIncrementClicked}
-        onResetClicked={this.handleResetClicked}
-        count={this.props.count}
-      />
+      <div>
+        <h2>Demo Redux</h2>
+        <div style={{ margin: '15px 0 5px 0'}}>
+          Count: {count}
+        </div>
+        <button
+          disabled={count==0}
+          style={{width: '30px', marginRight: '5px'}}
+          onClick={()=>this.handleDecrementClicked()}>
+          -
+        </button>
+        <button
+          style={{width: '30px', marginRight: '5px'}}
+          onClick={()=>this.handleIncrementClicked()}>
+          +
+        </button>
+        <button
+          disabled={count==0}
+          onClick={()=>this.handleResetClicked()}>
+          Reset
+        </button>
+      </div>
     );
   }
 }

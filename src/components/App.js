@@ -5,6 +5,7 @@ const App = (props) => {
   return (
     <div className="container">
       <IndexLink to="/">Home</IndexLink>
+      <Link to="/redux">Redux</Link>
       <Link to="/demo">Demo</Link>
       <Link to="/speed-dial">SpeedDial</Link>
       <Link to="/number-input">NumberInput</Link>

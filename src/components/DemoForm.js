@@ -12,15 +12,17 @@ class DemoForm extends React.Component {
     const {
       count,
       onResetClicked,
+      onDecrementClicked,
       onIncrementClicked
     } = this.props;
 
     return (
       <div>
-        <h2>Demo Redux</h2>
+        <h2>Demo Redux with Material UI</h2>
         <h4>Count: {count}</h4>
-        <RaisedButton label="Increment" onClick={onIncrementClicked} primary={true} style={{marginRight: 10}} />
-        <RaisedButton label="Reset" onClick={onResetClicked} primary={true} style={{marginBottom: 10}} />
+        <RaisedButton label="-" style={{marginRight: 10}} primary={true} disabled={count==0} onClick={onDecrementClicked} />
+        <RaisedButton label="+" style={{marginRight: 10}} primary={true} onClick={onIncrementClicked} />
+        <RaisedButton label="Reset" style={{marginBottom: 10}} secondary={true} disabled={count==0} onClick={onResetClicked} />
       </div>
     );
   }
@@ -29,6 +31,7 @@ class DemoForm extends React.Component {
 DemoForm.propTypes = {
   count: PropTypes.number,
   onResetClicked: PropTypes.func,
+  onDecrementClicked: PropTypes.func,
   onIncrementClicked: PropTypes.func
 };
 
