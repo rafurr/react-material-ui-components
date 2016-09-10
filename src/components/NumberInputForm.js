@@ -19,7 +19,7 @@ class NumberInputForm extends React.Component {
 
     return (
       <div>
-        <h2>NumberInput Component</h2>
+        <h2>xxxNumberInput Component</h2>
         hintText
         <NumberInput
           style={{marginBottom: 10, width: 200}}
