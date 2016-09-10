@@ -421,7 +421,7 @@ NumberInput.propTypes = {
     PropTypes.string,
     PropTypes.number
   ])
-};``
+};
 
 NumberInput.defaultProps = {
   min: -Infinity,
