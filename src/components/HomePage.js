@@ -10,7 +10,7 @@ const HomePage = () => {
       <h2>Get Started</h2>
 
       <ol>
-        <li>xxxView the <Link to="material-ui">Material-UI Components </Link></li>
+        <li>View the <Link to="speed-dial">SpeedDial Component</Link></li>
         <li>View the <Link to="number-input">NumberInput Component </Link></li>
       </ol>
     </div>
