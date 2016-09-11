@@ -10,7 +10,8 @@ const HomePage = () => {
       <h2>Get Started</h2>
 
       <ol>
-        <li>View the <Link to="demo">Material UI Demo</Link></li>
+        <li>View the <Link to="redux">Redux Demo</Link></li>
+        <li>View the <Link to="redux-mui">Redux MUI Demo</Link></li>
         <li>View the <Link to="speed-dial">SpeedDial Component</Link></li>
         <li>View the <Link to="number-input">NumberInput Component </Link></li>
       </ol>

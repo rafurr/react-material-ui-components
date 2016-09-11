@@ -79,13 +79,11 @@ export class SpeedDial extends React.Component {
     }
   }
 
-  handleItemMouseEnter(e, item) {
-    // console.log('Enter', this.tooltip(), item.props['data-tooltip']);
+  handleItemMouseEnter(item) {
     this.setTooltip(item.props['data-tooltip']);
   }
 
-  handleItemMouseLeave(e, item) {
-    // console.log('Leave', this.tooltip(), item.props['data-tooltip']);
+  handleItemMouseLeave() {
     this.resetTooltip();
   }
 
@@ -124,8 +122,8 @@ export class SpeedDial extends React.Component {
 
       return (
         <li
-          onMouseEnter={e => this.handleItemMouseEnter(e, item)}
-          onMouseLeave={e => this.handleItemMouseLeave(e, item)}
+          onMouseEnter={(e) => this.handleItemMouseEnter(item)}
+          onMouseLeave={() => this.handleItemMouseLeave()}
           key={'item' + index}
           style={{
             WebkitAnimationDelay: delay,

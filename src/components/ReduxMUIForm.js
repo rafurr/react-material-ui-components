@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 
 import RaisedButton from 'material-ui/RaisedButton';
 
-class DemoForm extends React.Component {
+class ReduxMUIForm extends React.Component {
 
   constructor() {
     super();
@@ -18,7 +18,7 @@ class DemoForm extends React.Component {
 
     return (
       <div>
-        <h2>Demo Redux with Material UI</h2>
+        <h2>Redux with Material UI Demo</h2>
         <h4>Count: {count}</h4>
         <RaisedButton label="-" style={{marginRight: 10}} primary={true} disabled={count==0} onClick={onDecrementClicked} />
         <RaisedButton label="+" style={{marginRight: 10}} primary={true} onClick={onIncrementClicked} />
@@ -28,11 +28,11 @@ class DemoForm extends React.Component {
   }
 }
 
-DemoForm.propTypes = {
+ReduxMUIForm.propTypes = {
   count: PropTypes.number,
   onResetClicked: PropTypes.func,
   onDecrementClicked: PropTypes.func,
   onIncrementClicked: PropTypes.func
 };
 
-export default DemoForm;
+export default ReduxMUIForm;

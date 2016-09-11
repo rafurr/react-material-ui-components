@@ -2,7 +2,7 @@ import React, {PropTypes} from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 
-import DemoForm from '../components/DemoForm';
+import ReduxMUIForm from '../components/ReduxMUIForm';
 
 import {
   setCount
@@ -22,7 +22,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export class DemoPage extends React.Component {
+export class ReduxMUIPage extends React.Component {
 
   constructor() {
     super();
@@ -46,7 +46,7 @@ export class DemoPage extends React.Component {
 
   render() {
     return (
-      <DemoForm
+      <ReduxMUIForm
         onDecrementClicked={this.handleDecrementClicked}
         onIncrementClicked={this.handleIncrementClicked}
         onResetClicked={this.handleResetClicked}
@@ -56,11 +56,11 @@ export class DemoPage extends React.Component {
   }
 }
 
-DemoPage.propTypes = {
+ReduxMUIPage.propTypes = {
   actions: PropTypes.shape({
     setCount: PropTypes.func
   }),
   count: PropTypes.number
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DemoPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxMUIPage);

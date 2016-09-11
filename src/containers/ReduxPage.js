@@ -20,7 +20,7 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export class DemoPage extends React.Component {
+export class ReduxPage extends React.Component {
 
   constructor() {
     super();
@@ -49,7 +49,7 @@ export class DemoPage extends React.Component {
 
     return (
       <div>
-        <h2>Demo Redux</h2>
+        <h2>Redux Demo</h2>
         <div style={{ margin: '15px 0 5px 0'}}>
           Count: {count}
         </div>
@@ -74,11 +74,11 @@ export class DemoPage extends React.Component {
   }
 }
 
-DemoPage.propTypes = {
+ReduxPage.propTypes = {
   actions: PropTypes.shape({
     setCount: PropTypes.func
   }),
   count: PropTypes.number
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DemoPage);
+export default connect(mapStateToProps, mapDispatchToProps)(ReduxPage);
